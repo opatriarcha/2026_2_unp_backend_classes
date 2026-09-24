@@ -1,0 +1,9 @@
+package br.edu.unp.blog.backend.datasource.repositories;
+
+import br.edu.unp.blog.backend.domainmodel.entities.Post;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.UUID;
+
+public interface PostRepository extends JpaRepository<Post, UUID> {
+}
