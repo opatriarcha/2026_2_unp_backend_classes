@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Objects;
+import java.util.UUID;
 
 @Entity
 @NoArgsConstructor
@@ -16,13 +17,13 @@ public class Profile {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private @Getter @Setter String id;
+    private @Getter @Setter UUID id;
 
     @Column(name="BIO", length = 255)
     private @Getter @Setter String bio;
 
     @Column(name="PICTURE", length = 255)
-    private @Getter @Setter String picture_uri;
+    private @Getter @Setter String pictureUri;
 
     @Override
     public boolean equals(Object o) {

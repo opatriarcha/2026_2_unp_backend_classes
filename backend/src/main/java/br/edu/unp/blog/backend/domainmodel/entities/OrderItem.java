@@ -13,7 +13,7 @@ import java.util.Objects;
 public class OrderItem {
 
     @EmbeddedId
-    private @Getter @Setter OrderItemKey id;
+    private @Getter @Setter OrderItemKey key;
 
     @Getter @Setter
     private String itemName;
@@ -34,11 +34,11 @@ public class OrderItem {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         OrderItem orderItem = (OrderItem) o;
-        return Objects.equals(id, orderItem.id);
+        return Objects.equals(key, orderItem.key);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(key);
     }
 }

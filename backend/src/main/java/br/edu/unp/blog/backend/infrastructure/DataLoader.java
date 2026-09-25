@@ -1,5 +1,7 @@
 package br.edu.unp.blog.backend.infrastructure;
 
+import br.edu.unp.blog.backend.datasource.repositories.*;
+import br.edu.unp.blog.backend.domainmodel.entities.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -46,8 +48,8 @@ public class DataLoader {
     @Bean
     CommandLineRunner initData(
             UserRepository userRepository,
-//            ProfileRepository profileRepository,
-//            RoleRepository roleRepository,roleRepository
+            ProfileRepository profileRepository,
+            RoleRepository roleRepository,
             PostRepository postRepository,
             TagRepository tagRepository,
             OrderRepository orderRepository,
@@ -85,7 +87,7 @@ public class DataLoader {
 
                 Profile profile = new Profile();
                 profile.setBio("Lover of " + sampleWords.get(random.nextInt(sampleWords.size())) + " and " + sampleWords.get(random.nextInt(sampleWords.size())));
-                profile.setProfilePicture("https://picsum.photos/id/" + (random.nextInt(100) + 1) + "/200/300");
+                profile.setPictureUri("https://picsum.photos/id/" + (random.nextInt(100) + 1) + "/200/300");
                 profile.setUser(savedUser);
                 profileRepository.save(profile);
 
@@ -103,7 +105,7 @@ public class DataLoader {
 
             Profile profile = new Profile();
             profile.setBio("Lover of " + sampleWords.get(random.nextInt(sampleWords.size())) + " and " + sampleWords.get(random.nextInt(sampleWords.size())));
-            profile.setProfilePicture("https://picsum.photos/id/" + (random.nextInt(100) + 1) + "/200/300");
+            profile.setPictureUri("https://picsum.photos/id/" + (random.nextInt(100) + 1) + "/200/300");
             profile.setUser(savedUser);
             profileRepository.save(profile);
 
@@ -138,7 +140,7 @@ public class DataLoader {
                 OrderItem item = new OrderItem();
                 OrderItemKey itemKey = new OrderItemKey(order.getKey().getOrderId(), UUID.randomUUID());
                 item.setKey(itemKey);
-                item.setProductName("Accessory " + sampleWords.get(random.nextInt(sampleWords.size())));
+                item.setItemName("Accessory " + sampleWords.get(random.nextInt(sampleWords.size())));
                 item.setQuantity(random.nextInt(5) + 1);
                 item.setOrder(order);
                 orderItemRepository.save(item);
@@ -160,9 +162,12 @@ public class DataLoader {
 //            profile.setUser(user); // bidirecional
 //            user.setProfile(profile);
 //
+
+
+           // dcsaf
 //            userRepository.save(user);
-//
-//            System.out.println(">>> Usuário admin criado com sucesso");
+// cd ba
+            System.out.println(">>> Usuário admin criado com sucesso");
 //        };
         };
     }}

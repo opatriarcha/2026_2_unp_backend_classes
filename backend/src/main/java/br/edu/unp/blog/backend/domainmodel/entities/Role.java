@@ -19,7 +19,7 @@ public class Role {
     @GeneratedValue(strategy = GenerationType.UUID)
     private @Getter @Setter UUID id;
 
-    @Column(name="NAME", length = 10)
+    @Column(name="NAME", length = 40)
     private @Getter @Setter String name;
 
     @ManyToMany( mappedBy = "roles", fetch = FetchType.LAZY)

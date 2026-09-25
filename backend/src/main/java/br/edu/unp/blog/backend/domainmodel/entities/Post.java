@@ -19,7 +19,7 @@ public class Post {
     private @Getter @Setter UUID id;
 
     @Column(name = "TITLE", length = 100)
-    private String title;
+    private @Getter @Setter String title;
 
     @Column( name = "CONTENT", length = 255)
     private @Getter @Setter String content;

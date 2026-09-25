@@ -20,7 +20,7 @@ public class OrderKey {
 
     @Getter @Setter
     @Column(name = "ORDER_ID")
-    private Long orderId;
+    private UUID orderId;
 
     @Override
     public boolean equals(Object o) {

@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Objects;
+import java.util.UUID;
 
 
 @Embeddable
@@ -15,13 +16,13 @@ public class OrderItemKey {
     @Getter
     @Setter
     @Column(name = "order_id")
-    private Long orderId;
+    private UUID orderId;
 
     @Getter @Setter
     @Column(name = "item_id")
-    private Long itemId;
+    private UUID itemId;
 
-    public OrderItemKey(Long orderId, Long itemId) {
+    public OrderItemKey(UUID orderId, UUID itemId) {
         this.orderId = orderId;
         this.itemId = itemId;
     }
